@@ -1,0 +1,105 @@
+<script>
+	const loc = new URL(window.location),
+				urlParam = loc.searchParams.get('url'),
+				default_url = 'https://google.com/webhp?igu=1';
+		if(urlParam != undefined){
+			/*setInterval(()=>{
+				document.getElementById('url').textContent = document.getElementById("iframe").contentWindow.location.href
+			}, 500)*/
+			document.write(
+				'<html style="height:100%;">'+
+				
+				'<title>'+atob(urlParam)+'</title>'+
+				
+				'<body style="background-color:white; height:100%;">'+
+				'<iframe id="iframe" src="'+atob(urlParam)+
+				
+				//'" style="width:1366px;height:768px;margin:-8px;" frameborder="0px"></iframe>'/*+
+				'" style="width:100%;height:100%;margin:-8px;" frameborder="0px"></iframe>'/*+
+				
+				'<div id="menu" style="position:absolute;background-color:gray;width:100%;height:100%;left:-0.5px;">jasjd fkjhasdkcf kjsdfh sdkjcdsnhkl</div>'*/+
+				
+				'</body></html>'+
+				'<!--<span id="url" style="margin-top:10px;">'+atob(urlParam)+'</span>-->');			
+		}
+		
+		else if(urlParam == undefined){
+
+			!!localStorage.getItem('msg-seen') && localStorage.removeItem('msg-seen')
+			
+
+			//!localStorage.getItem('msg-seen') && (alert(`Hello, once again! Interstellar here. \nI have added a new shortcut to this file: "proxy"\nI found a proxy site and so I made it so typing in "proxy" (type without quotes) will then ask you for another URL and then proxy that URL.\n\nEnjoy!`), localStorage.setItem('msg-seen', true))
+
+			
+			var urlReq;
+			function drive_file(path, spl="/root/") {
+				return 'file:///media/fuse/drivefs-'+window.location.href.split('drivefs-')[1].split(spl)[0]+spl+path
+			}
+
+			
+			const sc = {
+				'slope': 'https://slope2.online',
+				'lol': 'https://lolbeans.io',
+				'res': 'https://reslauncher.vercel.app',
+				'yohoho': 'https://yohoho.io',
+				'defly': 'https://defly.io',
+				'skins': 'https://minecraftskins.com',
+				'g': 'https://google.com/webhp?igu=1',
+				'riv': drive_file('Chromebook Files/Resent4.html'),
+				'sfc': drive_file('Chromebook Files/sfCalc.html'),
+				'wordsearch': drive_file('Chromebook Files/WordSearch.html'),
+				'rr': 'https://interstellar717.github.io/radical-red',//'https://www.retrogames.cc/embed/46552-pokemon-radical-red-v4-1.html',
+				'dex': 'https://dex.radicalred.net',
+				'k': drive_file('Chromebook Files/keys.html'),
+				'cube': drive_file('cubing.html'),
+				'ytu': 'https://ytunblockerv10.weebly.com',
+				'shell': 'https://hardshell.life',
+				'cs': 'https://cstimer.net',
+				'rb': 'https://retrobowlgame.org/home',
+				'u': 'https://interstellar717.github.io/unbound',//'https://www.retrogames.cc/embed/44803-pokemon-unbound-v2-1-1-1.html',
+				'ic': 'https://infinite-craft.org/infinite-craft',
+				'bonk': 'https://bonk.io',
+				'hb': 'https://hitbox.io',
+				'glz': 'https://www.retrogames.cc/embed/42911-pokemon-glazed-9-0.html',
+				'em': 'https://interstellar717.github.io/emerald-imperium',
+				'pk': 'https://interstellar717.github.io/pokemon'
+				//,'archive': 'https://web.archive.org/web/'+prompt('What archive would you like to access?', 'https://'),
+				//'proxy': drive_url('proxy.html', '/Custom Files/')+'?url='+prompt('Which site would you like proxied?', 'https://')
+			};
+			var url = prompt('URL?', 'https://');
+			if(url.split('://').length > 1 && url.split('youtube.com/watch?v=').length <= 1) urlReq = url;
+			else if(!url) urlReq = default_url;
+			else {
+				
+				if(sc[url]) {
+					urlReq = sc[url]
+				}
+				else {
+					if (url.split('youtube.com/watch?v=').length > 1) {
+						var parts = url.split('/watch?v=');
+						urlReq = "https://youtube.com" + "/embed/" + parts[1]// + "?v=" + parts[1] + "&autoplay=1"
+					}
+					else if (url == 'proxy') {
+						urlReq = 'file:///media/fuse/drivefs-'+window.location.href.split('drivefs-')[1].split('/Custom%20Files/')[0]+'/Custom%20Files/'+'proxy.html'+'?url='+prompt('Which site would you like proxied?', 'https://');
+					}
+					else if (url == 'archive') {
+						urlReq = 'https://web.archive.org/web/'+prompt('What archive would you like to access?', 'https://');
+					}
+					else {
+						urlReq = "https://google.com/search?q="+url+"&igu=1";
+					}
+				}
+			}
+			
+			if(localStorage.urls) {
+				localStorage.setItem('urls', localStorage.getItem('urls')+"\n"+(urlReq))
+			}
+			else localStorage.setItem('urls', [urlReq]);
+
+			
+			var encrypt = btoa(urlReq);
+			window.location += '?url=' + encrypt;
+		}
+</script>
+
+<!--ccc.web.rufan.tech-->        
