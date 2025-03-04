@@ -33,7 +33,7 @@
 			
 			var urlReq;
 			function drive_file(path, spl="/root/") {
-				return 'file:///media/fuse/drivefs-'+window.location.href.split('drivefs-')[1].split(spl)[0]+spl+path
+				return 'file:///media/fuse/drivefs-'+window.location.href.split('drivefs-')[1]?.split(spl)[0]+spl+path
 			}
 
 			
