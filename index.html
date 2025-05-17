@@ -2,9 +2,9 @@
 
 	const titles = [];
 
-	var title = titles[Math.floor(Math.random()*titles.length)];
+	var title = titles[Math.floor(Math.random() * titles.length)];
 
-	function frame(url, selected_window=window) {
+	function frame(url, selected_window = window) {
 		selected_window.document.write(`
 			<title id="title">${title}</title>
 			<style>
@@ -39,7 +39,7 @@
 			<script>
 					const qs = (i) => { return document.querySelector(i) };
 					const qsa = (i) => { return document.querySelectorAll(i) };
-			</scr`+`ipt>
+			</scr`+ `ipt>
 		`);
 	}
 
@@ -50,8 +50,8 @@
 	urlParam == "rr" && frame('https://www.retrogames.cc/embed/46552-pokemon-radical-red-v4-1.html')
 
 
-	if(!urlParam) {
-		var url = window.location.href.split('Custom.html')[0]+'CustomFrame.html',
+	if (!urlParam) {
+		var url = 'http://interstellar717.github.io/custom.html/CustomFrame.html',
 			w = window.open('https://blocked.goguardian.com');
 		frame(url, w)
 		window.close();
