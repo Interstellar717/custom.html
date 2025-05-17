@@ -1,9 +1,9 @@
 <script>
-	
+
 	const titles = [];
-	
+
 	var title = titles[Math.floor(Math.random()*titles.length)];
-	
+
 	function frame(url, selected_window=window) {
 		selected_window.document.write(`
 			<title id="title">${title}</title>
@@ -31,10 +31,7 @@
 			</style>
 			<body style="background-color:white;width:100%;height:100%;margin:0px;">
 
-				<!--<div id="menu">
-					<input type="text" value="http://">
-					<button onclick="qs('iframe').src = qs('#menu input').value">Go</button>
-				</div>-->
+				
 
 			
 				<iframe src="${url}" style="width: 100%; height: 100%; margin: 0px;" frameborder="0px"></iframe>
@@ -45,20 +42,24 @@
 			</scr`+`ipt>
 		`);
 	}
-	
-	const loc = new URL(window.location),
-			urlParam = loc.searchParams.get('case');
 
-	
+	const loc = new URL(window.location),
+		urlParam = loc.searchParams.get('case');
+
+
 	urlParam == "rr" && frame('https://www.retrogames.cc/embed/46552-pokemon-radical-red-v4-1.html')
 
-	
+
 	if(!urlParam) {
 		var url = window.location.href.split('Custom.html')[0]+'CustomFrame.html',
-			 w = window.open('https://blocked.goguardian.com');
+			w = window.open('https://blocked.goguardian.com');
 		frame(url, w)
 		window.close();
 	}
-	
-	
+
+
 </script>
+<!--<div id="menu">
+<input type="text" value="http://">
+<button onclick="qs('iframe').src = qs('#menu input').value">Go</button>
+</div>--><!--<script>alert('temporarily disabled')</script>
