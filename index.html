@@ -50,17 +50,15 @@
 	// urlParam == "rr" && frame('https://www.retrogames.cc/embed/46552-pokemon-radical-red-v4-1.html')
 
 
-	if (!urlParam) {
-		var url = "https://interstellar717.github.io/custom.html/CustomFrame.html",
-			w = window.open("https://blocked.goguardian.com");
+	var url = "https://interstellar717.github.io/custom.html/CustomFrame.html",
+		w = window.open("https://blocked.goguardian.com");
 
-		if (urlParam) {
-			url += "?url=" + btoa(urlParam);
-		}
-		
-		frame(url, w)
-		window.close();
+	if (urlParam) {
+		url += "?url=" + btoa(urlParam);
 	}
+	
+	frame(url, w)
+	window.close();
 
 
 </script>
